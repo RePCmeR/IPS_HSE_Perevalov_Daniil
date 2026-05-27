@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Дилемма заключённого — IPS HSE</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Главное меню -->
+    <section id="main-menu">
+      <button id="btn-play">Играть</button>
+      <button id="btn-simulator">Симулятор</button>
+      <button id="btn-exit">Выход</button>
+    </section>
+
+    <!-- Игра -->
+    <section id="game-screen" style="display:none;">
+      <div id="game-submenu">
+        <button id="btn-random-level">Случайный уровень</button>
+        <button id="btn-levels">Уровни</button>
+        <button id="btn-tutorial">Обучение</button>
+        <button id="btn-back-game">Назад</button>
+      </div>
+      <div id="game-area">
+      </div>
+    </section>
+
+    <!-- Симулятор -->
+    <section id="simulator-screen" style="display:none;">
+      <button id="btn-one-vs-one">Один на один</button>
+      <button id="btn-tournament">Турнир</button>
+      <button id="btn-back-sim">Назад</button>
+      <div id="sim-area">
+      </div>
+    </section>
+
+    <!-- Редактор стратегий -->
+    <section id="editor-screen" style="display:none;">
+      <div id="editor-toolbar">
+        <button id="btn-toggle-strategy">Моя стратегия / Противник</button>
+        <button id="btn-save-strategy">Сохранить</button>
+        <button id="btn-load-preset">Загрузить встроенную</button>
+        <button id="btn-back-editor">Назад</button>
+      </div>
+      <div id="editor-main">
+        <div id="palette">
+          <div class="drag-item" draggable="true" data-action="C">C-вершина</div>
+          <div class="drag-item" draggable="true" data-action="D">D-вершина</div>
+        </div>
+        <!-- Холст Cytoscape для редактора -->
+        <div id="cy-container"></div>
+      </div>
+    </section>
+
+    <!-- Турнирная сетка -->
+    <section id="tournament-screen" style="display:none;">
+      <div id="tournament-layout">
+        <div id="tournament-bracket"></div>
+        <div id="strategy-list"></div>
+      </div>
+      <div id="tournament-controls">
+        <button id="btn-start-tournament">Старт турнира</button>
+        <button id="btn-back-tournament">Назад</button>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

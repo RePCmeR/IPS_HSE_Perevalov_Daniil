@@ -1,0 +1,327 @@
+/* === ОБЩИЕ СТИЛИ === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a2e;
+  color: #eaeaea;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px;
+  background-color: #16213e;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  min-height: 80vh;
+}
+
+/* === ГЛАВНОЕ МЕНЮ === */
+#main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 100px 0;
+}
+
+#main-menu button {
+  width: 250px;
+  padding: 18px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#main-menu button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+#btn-play {
+  background: linear-gradient(135deg, #0f9b58, #0b7a44);
+  color: white;
+}
+
+#btn-simulator {
+  background: linear-gradient(135deg, #e94560, #c23152);
+  color: white;
+}
+
+#btn-exit {
+  background: #2c3e50;
+  color: #aaa;
+}
+
+/* === ОБЩИЕ ЭКРАНЫ === */
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #e94560;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e94560;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* === КНОПКИ НАВИГАЦИИ ВНУТРИ ЭКРАНОВ === */
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0f3460;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #1a508b;
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* === РЕДАКТОР ГРАФОВ === */
+#editor-screen {
+  flex-direction: column;
+}
+
+#editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #1a1a2e;
+  padding: 15px;
+  border-radius: 12px;
+  align-items: center;
+}
+
+#editor-main {
+  display: flex;
+  gap: 20px;
+  height: 70vh;
+}
+
+#palette {
+  width: 120px;
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.drag-item {
+  width: 90px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: grab;
+  color: white;
+  user-select: none;
+}
+
+.drag-item[data-action="C"] {
+  background: #0f9b58;
+}
+
+.drag-item[data-action="D"] {
+  background: #e94560;
+}
+
+#cy-container {
+  flex: 1;
+  background: #0f3460;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* === ИГРОВОЙ ЭКРАН === */
+#game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#game-graph {
+  width: 100%;
+  height: 400px;
+  background: #0f3460;
+  border-radius: 12px;
+}
+
+#game-control-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  background: #1a1a2e;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+#score-panel {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+
+.player-score { color: #0f9b58; }
+.opponent-score { color: #e94560; }
+
+#payoff-matrix-display table {
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#payoff-matrix-display th,
+#payoff-matrix-display td {
+  border: 1px solid #aaa;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+/* === УРОВНИ === */
+#levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 10px;
+  background: #1a1a2e;
+  border-radius: 12px;
+}
+
+.level-card {
+  background: #0f3460;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+}
+
+.level-card .level-num {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e94560;
+}
+
+.level-card .level-desc {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* === ТУРНИРНАЯ СЕТКА === */
+#tournament-layout {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+#tournament-bracket {
+  flex: 2;
+  background: #1a1a2e;
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.bracket-slot {
+  background: #0f3460;
+  border: 2px dashed #eaeaea;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  color: #aaa;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.bracket-slot:hover {
+  background: #1a508b;
+  border-color: #e94560;
+}
+
+#strategy-list {
+  flex: 1;
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.strategy-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f3460;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: grab;
+  color: white;
+}
+
+.strategy-card:hover {
+  background: #1a508b;
+}
+
+/* === ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ === */
+.hidden {
+  display: none !important;
+}
+
+button.back-btn {
+  background: #2c3e50;
+  color: #ccc;
+}
+
+button.back-btn:hover {
+  background: #3e5a6b;
+}
