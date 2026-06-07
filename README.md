@@ -2,11 +2,6 @@
 ---
 # Игра-симулятор итеративной дилеммы заключенного
 
-## Похожие проекты
-- https://github.com/Axelrod-Python/Axelrod?tab=readme-ov-file
-- https://github.com/gambitproject/gambit
-- https://github.com/cristal-smac/ipd
-
 ## Оглавление
 
 1. [Краткое описание](#краткое-описание)
@@ -24,6 +19,7 @@
    - [Структура проекта](#структура-проекта)
    - [Ключевые модули](#ключевые-модули)
    - [Дальнейшее развитие](#дальнейшее-развитие)
+6. [Похожие проекты](#похожие-проекты)
 
 ---
 
@@ -217,3 +213,8 @@ IPS_Prisoners_Dilemma/
 - Адаптация для мобильных устройств (touch-жесты).
 - Сокрытие части графа, и ее показ при попадании в нее.
 - Внедрение 3 и более вариантов действий
+
+## Похожие проекты
+- https://github.com/Axelrod-Python/Axelrod?tab=readme-ov-file
+- https://github.com/gambitproject/gambit
+- https://github.com/cristal-smac/ipd
